@@ -9,6 +9,11 @@ class DessertUsecase {
     const created = await this.dessertRepo.insertDessert(dessert);
     return created;
   }
+
+  async getDessert(dessertId) {
+    const dessert = await this.dessertRepo.getDessert(dessertId);
+    return dessert;
+  }
 }
 
 module.exports = DessertUsecase;

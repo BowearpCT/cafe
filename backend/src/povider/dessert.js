@@ -35,6 +35,19 @@ class DessertProvider {
     }
     return createResult;
   }
+
+  async findById(id) {
+    if (!this.connection) {
+      return null;
+    }
+    let result;
+    try {
+      result = await this.connection.findOne({ id: id });
+    } catch (error) {
+      throw error;
+    }
+    return result;
+  }
 }
 
 module.exports = DessertProvider;
