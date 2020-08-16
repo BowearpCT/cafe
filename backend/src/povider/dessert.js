@@ -1,7 +1,7 @@
 const { MongoClient } = require("mongodb");
 class DessertProvider {
   constructor() {
-    this.mongoUrl = "mongodb://localhost:27017";
+    this.mongoUrl = "mongodb://mongo:27017";
     this.db = "cafe";
     this.collection = "dessert";
     this.connection = null;
