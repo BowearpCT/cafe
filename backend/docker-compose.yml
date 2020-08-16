@@ -1,5 +1,12 @@
 version: "3.5"
 services:
+  app:
+    container_name: cafe_api
+    image: cafe_app:1
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongo
   mongo:
     container_name: cafe_mongo
     image: mongo:4.0
