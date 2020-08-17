@@ -5,7 +5,6 @@ const bodyParser = require("body-parser");
 const { dessert } = require("./src/route/");
 
 app.get("/", (req, res) => {
-  console.log(req);
   res.send("Hello World!");
 });
 // app.use(cors());

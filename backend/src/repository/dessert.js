@@ -10,8 +10,14 @@ class DessertRepo {
   }
 
   async getDessert(dessertId) {
-    const result = await this.dessertProvider.findById(dessertId);
-    const dessert = new Dessert(result);
+    let dessert;
+    try {
+      const result = await this.dessertProvider.findById(dessertId);
+      dessert = new Dessert(result);
+    } catch (error) {
+      throw error;
+    }
+
     return dessert;
   }
 }
