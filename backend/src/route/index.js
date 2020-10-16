@@ -1,5 +1,5 @@
-const dessert = require("./dessert");
+const patient = require("./patient");
 
 module.exports = {
-  dessert,
+  patient,
 };

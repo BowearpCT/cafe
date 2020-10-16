@@ -53,8 +53,5 @@ const getDessert = async (req, res) => {
 
 router.post("/", insertDessert);
 router.get("/:id", getDessert);
-// router.get("/:id", createLog);
-// router.patch("/:id", createLog);
-// router.delete("/:id", createLog);
 
 module.exports = { router };

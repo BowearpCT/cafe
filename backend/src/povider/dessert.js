@@ -1,5 +1,4 @@
-const { MongoClient } = require("mongodb");
-class DessertProvider {
+class provider {
   constructor() {
     this.mongoUrl = "mongodb://mongo:27017";
     this.db = "cafe";
