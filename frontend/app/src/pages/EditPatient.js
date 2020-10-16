@@ -3,9 +3,11 @@ import { Form, Input, Button, Select, DatePicker } from "antd";
 import moment from "moment";
 import getAge from "get-age";
 import uniqid from "uniqid";
+import { useHistory } from "react-router-dom";
 import { updatePatient, getPatientById } from "../api";
 
 const EditPatient = ({ match }) => {
+  const history = useHistory();
   const id = match.params.id;
   const [patientName, setPatientName] = useState("");
   const [age, setAge] = useState("");
@@ -32,6 +34,7 @@ const EditPatient = ({ match }) => {
       underlyingDisease,
     };
     await updatePatient(id, data);
+    history.push("/");
   };
 
   const getPatient = async () => {

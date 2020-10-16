@@ -23,3 +23,15 @@ export const updatePatient = async (id, data) => {
   const url = `http://localhost:3000/patient/${id}`;
   await axios.put(url, { data: data });
 };
+
+export const saveHistory = async (data) => {
+  const url = `http://localhost:3000/history/add`;
+  await axios.post(url, { data });
+};
+
+export const getHistory = async (patientId) => {
+  const url = `http://localhost:3000/history/patient/${patientId}`;
+  const response = await axios.get(url);
+  const historyList = response.data.data;
+  return historyList;
+};

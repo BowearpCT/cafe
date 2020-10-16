@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const { patient } = require("./src/route/");
+const { patient, history } = require("./src/route/");
 
 var corsOptions = {
   origin: "http://localhost:3001",
@@ -17,6 +17,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/patient", patient.router);
+app.use("/history", history.router);
 // app.use(app.router);
 // routes.initialize(app);
 app.listen(port, () => {

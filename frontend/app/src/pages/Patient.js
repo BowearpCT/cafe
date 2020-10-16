@@ -7,24 +7,35 @@ import { Table, Button } from "antd";
 
 const Patient = () => {
   const history = useHistory();
-  console.log("history", history);
   const [data, setData] = useState([]);
 
   const goToEdit = (record) => {
-    console.log("record", record);
     history.push(`/patient/edit/${record.id}`);
+  };
+
+  const goToHistory = (record) => {
+    history.push(`/history/patient/${record.id}`);
   };
 
   const columns = [
     {
-      title: "Patient ID",
+      title: "Patient Id",
       dataIndex: "id",
       key: "id",
     },
     {
-      title: "Patient Name",
-      dataIndex: "patientName",
-      key: "patientName",
+      title: "Patient ID",
+      // dataIndex: "id",
+      key: "id",
+      render: (text, record) => (
+        <a
+          onClick={() => {
+            goToHistory(record);
+          }}
+        >
+          {record.patientName}
+        </a>
+      ),
     },
     {
       title: "Age",

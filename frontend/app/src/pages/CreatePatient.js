@@ -2,11 +2,12 @@ import React, { useState } from "react";
 import { Form, Input, Button, Select, DatePicker } from "antd";
 import moment from "moment";
 import getAge from "get-age";
-
+import { useHistory } from "react-router-dom";
 import { getPatientList, savePatient } from "../api";
 import uniqid from "uniqid";
 
 const CreatePatient = () => {
+  const history = useHistory();
   const [patientName, setPatientName] = useState("");
   const [age, setAge] = useState("");
   const [sex, setSex] = useState("male");
@@ -34,6 +35,7 @@ const CreatePatient = () => {
     };
     console.log("data", data);
     await savePatient(data);
+    history.push("/");
   };
 
   return (
