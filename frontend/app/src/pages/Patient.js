@@ -24,9 +24,9 @@ const Patient = () => {
       key: "id",
     },
     {
-      title: "Patient ID",
+      title: "Patient Name",
       // dataIndex: "id",
-      key: "id",
+      key: "name",
       render: (text, record) => (
         <a
           onClick={() => {
